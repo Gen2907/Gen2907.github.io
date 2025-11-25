@@ -1,0 +1,602 @@
+/* ----------------------------------------------------------
+   FUENTES
+   Importa las fuentes usadas en toda la página.
+---------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap');
+
+/* ----------------------------------------------------------
+   ANIMACIÓN DE CARGA
+   Efecto sutil de fade-in para el contenido.
+---------------------------------------------------------- */
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------------------------------------------------
+   GENERAL
+   Estilos base del sitio: fondo, tipografía y margen superior.
+---------------------------------------------------------- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    padding-top: 110px;
+    /* espacio para el header fijo */
+
+    /* MEJORA: Animación de carga */
+    animation: pageFadeIn 0.7s ease-out;
+}
+
+
+/* ----------------------------------------------------------
+   HEADER
+   Barra superior fija con logo y menú.
+---------------------------------------------------------- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #6d4820, #a06c32);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+    /* siempre visible */
+}
+
+/* Contenedor del logo y nombre */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Tamaño del logo */
+.logo-placeholder {
+    width: 160px;
+    height: 90px;
+}
+
+/* Ajusta la imagen del logo */
+.logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Título grande del header */
+header h1 {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 42px;
+    color: #ffce7a;
+
+    /* MEJORA: Sombra de texto para 'pop' y espaciado */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+
+/* ----------------------------------------------------------
+   NAV
+   Estilos del menú de navegación
+---------------------------------------------------------- */
+nav ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+
+    /* MEJORA: Preparación para animación de subrayado */
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* MEJORA: Animación de subrayado sutil */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffce7a;
+    transform: scaleX(0);
+    /* Inicia invisible */
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover {
+    color: #ffce7a;
+}
+
+/* MEJORA: Muestra el subrayado al pasar el ratón */
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    /* Se expande al 100% */
+}
+
+/* Evita el subrayado en el botón de login */
+.login-link a::after {
+    display: none;
+}
+
+/* Botón de login */
+.login-button {
+    border: 2px solid #ffce7a;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffce7a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+
+    /* MEJORA: Transición suave */
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background: #ffce7a;
+    color: #333;
+    /* MEJORA: Efecto de 'lift' (levantar) */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ----------------------------------------------------------
+   TÍTULOS
+   Estilos generales para los títulos de secciones.
+---------------------------------------------------------- */
+.section-title {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 45px;
+    color: #6d4820;
+
+    /* MEJORA: Ancla visual y consistencia tipográfica */
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffce7a;
+    display: inline-block;
+    /* Ajusta el borde al texto */
+    padding-bottom: 5px;
+}
+
+/* Estilo para el h2 en la página de cartelera */
+.page-title h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 45px;
+    color: #6d4820;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffce7a;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+/* ----------------------------------------------------------
+   CARRUSEL
+   Contenedor del carrusel, tarjetas y botones.
+---------------------------------------------------------- */
+.carousel-container {
+    width: 90%;
+    margin: 40px auto;
+    overflow: hidden;
+    /* oculta el exceso */
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    background: #fff5e6;
+}
+
+/* Línea de elementos del carrusel */
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    /* MEJORA: Animación más suave y con 'rebote' */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Diseño de cada tarjeta del carrusel */
+.slide {
+    flex: 0 0 200px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+
+    /* MEJORA: Transición para efecto hover */
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    /* Para contener el zoom de la imagen */
+}
+
+/* MEJORA: Efecto de 'lift' al pasar el ratón */
+.slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slide img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* MEJORA: Transición para zoom */
+    transition: transform 0.3s ease-out;
+}
+
+/* MEJORA: Zoom a la imagen al pasar el ratón por la tarjeta */
+.slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Flechas de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    /* MEJORA: Transición suave */
+    transition: all 0.3s ease;
+}
+
+/* MEJORA: Efecto hover en botones del carrusel */
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* ----------------------------------------------------------
+   BIENVENIDA
+   Recuadro decorativo con texto introductorio.
+---------------------------------------------------------- */
+.welcome-box {
+    width: 75%;
+    margin: 50px auto;
+    background: linear-gradient(135deg, rgba(255, 240, 220, 0.85), rgba(255, 250, 240, 0.9));
+    padding: 35px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-box h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 50px;
+    color: #6d4820;
+    text-transform: uppercase;
+}
+
+.welcome-box p {
+    color: #4a2d12;
+    font-size: 20px;
+}
+
+
+/* ----------------------------------------------------------
+   TARJETAS DE PELÍCULAS
+   Rejilla y diseño de cada tarjeta.
+---------------------------------------------------------- */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    /* MEJORA: Transición y overflow */
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+}
+
+/* MEJORA: Efecto 'lift' en tarjetas de película */
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+    /* MEJORA: Transición para zoom */
+    transition: transform 0.3s ease-out;
+}
+
+/* MEJORA: Zoom a la imagen al pasar el ratón */
+.movie-card:hover img {
+    transform: scale(1.05);
+}
+
+.btn-reservar {
+    display: inline-block;
+    margin-top: 10px;
+    background: #ffaf36;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    /* MEJORA: Transición */
+    transition: all 0.3s ease;
+}
+
+/* MEJORA: Efecto hover en botones de reserva */
+.btn-reservar:hover {
+    background: #e2b35f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ----------------------------------------------------------
+   COMIDAS / PRODUCTOS
+   Tarjetas con estilo suave para productos.
+---------------------------------------------------------- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 28px;
+    padding: 20px 10px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    /* MEJORA: Transición y overflow */
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+}
+
+/* MEJORA: Efecto 'lift' en tarjetas de comida */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    /* MEJORA: Transición para zoom */
+    transition: transform 0.3s ease-out;
+}
+
+/* MEJORA: Zoom a la imagen al pasar el ratón */
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    color: #6d4820;
+    text-transform: uppercase;
+}
+
+.product-card p {
+    font-size: 17px;
+    color: #4a2d12;
+}
+
+
+/* ----------------------------------------------------------
+   CONTACTO
+   Recuadro con la información de contacto y redes sociales.
+---------------------------------------------------------- */
+.contact-info-container {
+    width: 75%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.78);
+    padding: 35px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info-container h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 48px;
+    color: #6d4820;
+    text-transform: uppercase;
+}
+
+.contact-info-container p {
+    font-size: 20px;
+    color: #4a2d12;
+}
+
+/* Lista de redes sociales */
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    list-style: none;
+    padding-left: 0;
+    /* Reseteo */
+}
+
+/* Estilo de los enlaces */
+.social-media ul li a {
+    text-decoration: none;
+    color: #6d4820;
+    font-size: 18px;
+    font-weight: bold;
+    /* MEJORA: Transición y alineación */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* MEJORA: Efecto hover en redes sociales */
+.social-media ul li a:hover {
+    color: #e0aa52;
+    transform: translateX(5px);
+}
+
+/* Iconos pequeños */
+.social-media img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+
+/* ----------------------------------------------------------
+   FOOTER
+   Pie de página simple.
+---------------------------------------------------------- */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 25px;
+    background: #6d4820;
+    color: #fff;
+}
+
+
+/* ----------------------------------------------------------
+   FORMULARIOS (login y registro)
+   Estilos de los recuadros y campos.
+---------------------------------------------------------- */
+.container {
+    /* Ajuste: Este 'container' es genérico, así que me aseguro
+       que funcione para el login y otras páginas */
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los formularios se reorganicen */
+    justify-content: center;
+    /* Centra los formularios */
+    align-items: flex-start;
+    /* Alinea arriba */
+    gap: 40px;
+    padding: 20px 0;
+    /* Añade espacio vertical */
+    max-width: 1200px;
+    /* Limita el ancho máximo */
+    margin: 0 auto;
+    /* Centra el contenedor */
+}
+
+/* Caja del formulario */
+.form-container {
+    width: 350px;
+    padding: 25px 30px;
+    background: #ffffffdd;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e6d3b4;
+}
+
+/* Título */
+.form-container h2 {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 40px;
+    color: #6d4820;
+    text-transform: uppercase;
+}
+
+/* Etiquetas */
+.form-container label {
+    font-weight: bold;
+    font-size: 15px;
+    color: #6d4820;
+}
+
+/* Campos de texto */
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #bfa075;
+    box-sizing: border-box;
+    /* Asegura que el padding no rompa el ancho */
+    /* MEJORA: Transición suave */
+    transition: all 0.3s ease;
+}
+
+.form-container input:focus {
+    border-color: #e0aa52;
+    box-shadow: 0 0 5px rgba(255, 193, 94, 0.6);
+    outline: none;
+    /* Quita el borde feo de Chrome */
+}
+
+/* Botón de enviar */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #ffce7a;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    /* MEJORA: Transición */
+    transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+    background: #e2b35f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

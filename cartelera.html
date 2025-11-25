@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Configura la página para adaptarse a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cartelera - Film Views</title>
+
+    <!-- Enlace al archivo de estilos para el diseño visual -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado principal con logo y navegación -->
+    <header>
+        <div class="logo-title">
+            <div class="logo-placeholder">
+                <!-- Imagen del logo del sitio -->
+                <img src="img/logo.jpg" alt="Logo Film Views">
+            </div>
+            <h1>Film Views</h1>
+        </div>
+
+        <!-- Menú de navegación hacia las diferentes páginas del sitio -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cartelera.html">Cartelera</a></li>
+                <li><a href="comidas.html">Comidas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <!-- Botón para ir a la página de inicio de sesión -->
+                <li class="login-link"><a class="login-button" href="login.html"><span>Iniciar</span><span>Sesión</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Título de la sección -->
+        <section class="page-title">
+            <h2>Nuestra Cartelera</h2>
+        </section>
+
+        <!-- Contenedor de todas las tarjetas de películas -->
+        <section class="movie-grid">
+
+            <!-- Cada "movie-card" representa una película con imagen, datos y botón de reserva -->
+            <div class="movie-card">
+                <img src="img/uno.jpg" alt="The Shawshank Redemption">
+                <h3>The Shawshank Redemption</h3>
+                <p><strong>Género:</strong> Drama</p>
+                <p><strong>Sinopsis:</strong> Dos hombres encarcelados se unen a lo largo de varios años...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/padrino.jpg" alt="The Godfather">
+                <h3>The Godfather</h3>
+                <p><strong>Género:</strong> Crimen, Drama</p>
+                <p><strong>Sinopsis:</strong> El patriarca de una familia de crimen organizado transfiere su poder...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/dark knight.jpg" alt="The Dark Knight">
+                <h3>The Dark Knight</h3>
+                <p><strong>Género:</strong> Acción, Crimen, Drama</p>
+                <p><strong>Sinopsis:</strong> Batman enfrenta al Joker en una batalla que pone a prueba sus límites...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/pulp.jpg" alt="Pulp Fiction">
+                <h3>Pulp Fiction</h3>
+                <p><strong>Género:</strong> Crimen, Drama</p>
+                <p><strong>Sinopsis:</strong> Historias entrelazadas sobre crimen y redención...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/forrest.jpg" alt="Forrest Gump">
+                <h3>Forrest Gump</h3>
+                <p><strong>Género:</strong> Comedia, Drama, Romance</p>
+                <p><strong>Sinopsis:</strong> La vida de Forrest Gump se cruza con eventos históricos importantes...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/inception.jpg" alt="Inception">
+                <h3>Inception</h3>
+                <p><strong>Género:</strong> Acción, Aventura, Ciencia Ficción</p>
+                <p><strong>Sinopsis:</strong> Un ladrón experto en robar secretos a través de sueños recibe una misión...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/inter.jpg" alt="Interstellar">
+                <h3>Interstellar</h3>
+                <p><strong>Género:</strong> Ciencia Ficción, Aventura, Drama</p>
+                <p><strong>Sinopsis:</strong> Exploradores viajan por un agujero de gusano para salvar a la humanidad...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/avatar.jpg" alt="Avatar">
+                <h3>Avatar</h3>
+                <p><strong>Género:</strong> Ciencia Ficción, Aventura</p>
+                <p><strong>Sinopsis:</strong> Un ex marine se involucra en la cultura de Pandora mientras protege a su pueblo...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/titanic.jpg" alt="Titanic">
+                <h3>Titanic</h3>
+                <p><strong>Género:</strong> Romance, Drama</p>
+                <p><strong>Sinopsis:</strong> Una historia de amor a bordo del trágico Titanic...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/matrix.jpg" alt="The Matrix">
+                <h3>The Matrix</h3>
+                <p><strong>Género:</strong> Ciencia Ficción, Acción</p>
+                <p><strong>Sinopsis:</strong> Un hacker descubre la realidad simulada en la que vive...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+            <div class="movie-card">
+                <img src="img/wars.jpg" alt="Star Wars">
+                <h3>Star Wars: A New Hope</h3>
+                <p><strong>Género:</strong> Ciencia Ficción, Aventura</p>
+                <p><strong>Sinopsis:</strong> Un joven granjero se une a la rebelión para enfrentar al Imperio...</p>
+                <a href="#" class="btn-reservar">Reservar Entrada</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Pie de página del sitio -->
+    <footer>
+        <p>&copy; 2023 Film Views. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Permite que la página se adapte a pantallas pequeñas como teléfonos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro/inicio sesión - Film Views</title>
+
+    <!-- Archivo de estilos principal del sitio -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO CON LOGO Y MENÚ DE NAVEGACIÓN -->
+    <header>
+        <div class="logo-title">
+            <div class="logo-placeholder">
+                <!-- Logo que identifica al sitio -->
+                <img src="img/logo.jpg" alt="Logo Film Views">
+            </div>
+            <h1>Film Views</h1>
+        </div>
+
+        <!-- Navegación principal del sitio -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cartelera.html">Cartelera</a></li>
+                <li><a href="comidas.html">Comidas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <!-- Enlace para ingresar o crear cuenta -->
+                <li class="login-link">
+                    <a class="login-button" href="login.html">
+                        <span>Iniciar</span><span>Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL DE LOS FORMULARIOS -->
+    <div class="container">
+
+        <!-- FORMULARIO DE INICIO DE SESIÓN -->
+        <div class="form-container">
+            <h2>Iniciar Sesión</h2>
+
+            <!-- Envía los datos a login.php mediante POST -->
+            <form action="login.php" method="POST">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+
+
+                <!-- Botón para enviar los datos del login -->
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <div class="form-container">
+            <h2>Registro</h2>
+
+            <!-- Envía los datos a register.php mediante POST -->
+            <form action="register.php" method="POST">
+                <label for="new-username">Usuario:</label>
+                <input type="text" id="new-username" name="username" required>
+
+                <label for="new-email">Correo Electrónico:</label>
+                <input type="email" id="new-email" name="email" required>
+
+                <label for="new-password">Contraseña:</label>
+                <input type="password" id="new-password" name="password" required>
+
+                <label for="new-document">Documento de Identidad:</label>
+                <input type="text" id="new-document" name="document" required>
+
+                <label for="new-direccion">Dirección:</label>
+                <input type="text" id="new-direccion" name="direccion" required>
+
+
+
+
+
+                <!-- Botón para registrar un nuevo usuario -->
+                <button type=" submit">Registrarse</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2023 Film Views. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
